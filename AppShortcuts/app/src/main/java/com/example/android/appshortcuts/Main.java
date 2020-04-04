@@ -44,12 +44,18 @@ public class Main extends ListActivity implements OnClickListener {
             "com.example.android.shortcutsample.ADD_WEBSITE";
 
     private MyAdapter mAdapter;
+    
+    import com.microsoft.appcenter.AppCenter;
+    import com.microsoft.appcenter.analytics.Analytics;
+    import com.microsoft.appcenter.crashes.Crashes;
 
     private ShortcutHelper mHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCenter.start(getApplication(), "e6688e0e-e8f9-4bc0-a2b2-a9ff2eafa82a",
+                  Analytics.class, Crashes.class);
 
         setContentView(R.layout.main);
 
